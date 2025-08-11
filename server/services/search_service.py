@@ -21,7 +21,8 @@ class SearchService:
       if content and content.strip():
         results.append({
         "title": result.get("title", ""),
-        "url": result.get("url"),  
+        "url": result.get("url"),
+        "content":content or ""
      })
 
       

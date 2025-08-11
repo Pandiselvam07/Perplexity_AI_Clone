@@ -24,7 +24,7 @@ async def web_socket(webSocket:WebSocket):
     await webSocket.send_json({"type":"search_results","data":sorted_source_results})
     for chunk in llm_service.generate_response(query,sorted_source_results):
       await asyncio.sleep(0.1)
-      await webSocket.send_json({"type":'content',"data":chunk})
+      await webSocket.send_json({"type":"content","data":chunk})
     
   except:
     print('Unexcepted error occured')

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:perplexity_ai_clone/pages/chat_page.dart';
 import 'package:perplexity_ai_clone/sevices/chat_web_services.dart';
 import 'package:perplexity_ai_clone/theme/colors.dart';
 import 'package:perplexity_ai_clone/widgets/search_bar_button.dart';
@@ -74,8 +75,16 @@ class _SearchSectionState extends State<SearchSection> {
                     Spacer(),
                     GestureDetector(
                       onTap: () {
-                        if (_chatController.text.trim().isNotEmpty)
+                        if (_chatController.text.trim().isNotEmpty) {
                           ChatWebServices().chat(_chatController.text.trim());
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  ChatPage(quest: _chatController.text),
+                            ),
+                          );
+                        }
                       },
                       child: Container(
                         padding: EdgeInsets.all(10),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:perplexity_ai_clone/pages/home_page.dart';
 import 'package:perplexity_ai_clone/theme/colors.dart';
 import 'package:perplexity_ai_clone/widgets/side_nav_bar_button.dart';
 
@@ -37,6 +38,7 @@ class _SideNavBarState extends State<SideNavBar> {
                   title: 'Add',
                   icon: Icons.add,
                 ),
+
                 SideNavBarButton(
                   isCollapsed: isCollapsed,
                   title: 'Search',
